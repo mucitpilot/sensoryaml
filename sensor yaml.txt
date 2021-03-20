@@ -1,0 +1,35 @@
+esphome:
+  name: yatak_oda_sensor
+  platform: ESP8266
+  board: nodemcuv2
+
+wifi:
+  ssid: "ağ adınız"
+  password: "şifreniz"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Yatak Oda Sensor"
+    password: "F7OKt2QQDThO"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: "şifre gir"
+
+ota:
+  password: "şifre gir"
+
+# Example configuration entry
+sensor:
+  - platform: dht
+    pin: D2
+    temperature:
+      name: "Yatak Odası Sıcaklık"
+    humidity:
+      name: "Yatak odası Nem"
+    update_interval: 5s
